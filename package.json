@@ -1,0 +1,25 @@
+{
+  "name": "nosvagames",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss styles/styles.scss styles/styles.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastianaranda/NOSVA-Games.git"
+  },
+  "author": "Sebastian Aranda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebastianaranda/NOSVA-Games/issues"
+  },
+  "homepage": "https://github.com/sebastianaranda/NOSVA-Games#readme",
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.12"
+  }
+}
