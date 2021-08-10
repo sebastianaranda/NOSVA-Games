@@ -36,6 +36,9 @@ table {
   border-spacing: 0; }
 
 /*---------- TERMINA RESET DE CSS ----------*/
+body {
+  font-family: "Poppins", sans-serif; }
+
 .container {
   width: 100%;
   display: grid;
@@ -51,10 +54,24 @@ table {
   height: 100px;
   margin: 0 auto;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: space-between; }
   .header__logo {
     width: 160px;
     height: 64px; }
+  .header nav {
+    display: flex;
+    flex-flow: row nowrap; }
+    .header nav div {
+      margin: 0 30px;
+      height: 65px;
+      padding-top: 35px; }
+      .header nav div a {
+        text-transform: uppercase; }
+      .header nav div:first-child {
+        margin-left: 0px; }
+      .header nav div:last-child {
+        margin-right: 0px; }
 
 .sectionA {
   grid-area: sectionA;

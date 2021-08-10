@@ -39,6 +39,10 @@ table {
 
 @import 'variables.scss';
 
+body{
+	font-family: $fontPoppins;
+}
+
 .container{
 	width: 100%;
 	display: grid;
@@ -60,9 +64,28 @@ table {
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	&__logo{
 		width: 160px;
 		height: 64px;
+	}
+	nav{
+		display: flex;
+		flex-flow: row nowrap;
+		div{
+			margin: 0 30px;
+			height: 65px;
+			padding-top: 35px;
+			a{
+				text-transform: uppercase;
+			}
+			&:first-child{
+				margin-left: 0px;
+			}
+			&:last-child{
+				margin-right: 0px;
+			}
+		}
 	}
 }
 .sectionA{
