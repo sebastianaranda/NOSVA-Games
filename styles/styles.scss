@@ -36,3 +36,60 @@ table {
 	border-spacing: 0;
 }
 /*---------- TERMINA RESET DE CSS ----------*/
+
+@import 'variables.scss';
+
+.container{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: auto;
+	grid-template-areas:
+						"header"
+						"sectionA"
+						"sectionB"
+						"sectionC"
+						"footer";
+	background-color: aqua;
+}
+.header{
+	grid-area: header;
+	width: 100%;
+	max-width: 1110px;
+	height: 100px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	&__logo{
+		width: 160px;
+		height: 64px;
+	}
+}
+.sectionA{
+	grid-area: sectionA;
+	width: 100%;
+	max-width: 1110px;
+	height: 400px;
+	margin: 0 auto;
+}
+.sectionB{
+	grid-area: sectionB;
+	width: 100%;
+	max-width: 1110px;
+	height: 500px;
+	margin: 0 auto;
+}
+.sectionC{
+	grid-area: sectionC;
+	width: 100%;
+	max-width: 1110px;
+	height: 888px;
+	margin: 0 auto;
+}
+footer{
+	grid-area: footer;
+	width: 100%;
+	max-width: 1110px;
+	height: 103px;
+	margin: 0 auto;
+}
