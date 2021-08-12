@@ -19,7 +19,6 @@ html {
 }
 body {
 	line-height: 1;
-	height: calc(100% - 321px);
 }
 ol, ul {
 	list-style: none;
@@ -40,10 +39,10 @@ table {
 @import 'variables.scss';
 
 body{
-	font-family: $fontPoppins;
+	font-family: $fontMontserrat;
 }
 
-.container{
+.main-container{
 	width: 100%;
 	display: grid;
 	grid-template-columns: 100%;
@@ -54,17 +53,34 @@ body{
 						"sectionB"
 						"sectionC"
 						"footer";
-	background-color: aqua;
+	color: $colorWhite;
 }
 .header{
-	grid-area: header;
 	width: 100%;
-	max-width: 1110px;
 	height: 100px;
-	margin: 0 auto;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	background-color: $colorSecundary;
+	&__layout{
+		width: 100%;
+		max-width: 1110px;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: auto;
+		grid-template-areas:
+							"header header header header header header header header header header header header";
+		column-gap: 30px;
+		margin: 0 auto;
+	}
+	&__container{
+		width: 100%;
+		height: 100px;
+		align-items: center;
+		justify-content: space-between;
+		grid-area: header;
+		grid-column-start: 2;
+		grid-column-end: 12;
+		display: flex;
+		flex-flow: row nowrap;
+	}
 	&__logo{
 		width: 160px;
 		height: 64px;
@@ -91,28 +107,168 @@ body{
 .sectionA{
 	grid-area: sectionA;
 	width: 100%;
-	max-width: 1110px;
 	height: 400px;
-	margin: 0 auto;
+	background: rgb(2,0,36);
+	background: linear-gradient(90deg, $colorBlueDark 0%, $colorBlueLight 100%);
+	&__layout{
+		width: 100%;
+		max-width: 1110px;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: auto;
+		grid-template-areas:
+							"sectionA sectionA sectionA sectionA sectionA sectionA sectionA sectionA sectionA sectionA sectionA sectionA";
+		column-gap: 30px;
+		margin: 0 auto;
+	}
+	&__container{
+		width: 100%;
+		height: 400px;
+		align-items: center;
+		justify-content: space-between;
+		grid-area: sectionA;
+		grid-column-start: 2;
+		grid-column-end: 12;
+		display: flex;
+		flex-flow: row nowrap;
+	}
+	&__texto{
+		width: 50%;
+		max-width: 445px;
+		& h1{
+			font-size: 50px;
+			font-weight: 800;
+			line-height: 61px;
+			text-transform: uppercase;
+		}
+		& p{
+			font-size: 15px;
+			font-weight: 400;
+			line-height: 18px;
+			margin-top: 15px;
+			& span{
+				font-weight: 700;
+			}
+		}
+	}
+	&__imagen{
+		width: 50%;
+		&-container{
+			width: 360px;
+			height: 300px;
+			margin-left: auto;
+			position: relative;
+			& .chest{
+				width: 100%;
+			}
+			& .coin{
+				position: absolute;
+				&-front{
+					width: 120px;
+					top: -80px;
+					left: -60px;
+				}
+				&-back{
+					width: 30px;
+					top: 60px;
+					left: 30px;
+				}
+				&-middle{
+					width: 60px;
+					top: 0;
+					left: calc(100% - 60px);
+				}
+			}
+		}
+	}
 }
 .sectionB{
 	grid-area: sectionB;
 	width: 100%;
-	max-width: 1110px;
 	height: 500px;
 	margin: 0 auto;
+	background: no-repeat center url("../resources/blurred-bg.jpg");
+	background-size: cover;
+	position: relative;
+	&-gradient{
+		width: 100%;
+		height: 100%;
+		background-color: #000000;
+		opacity: 0.3;
+		position: absolute;
+		z-index: 0;
+	}
+	&__layout{
+		width: 100%;
+		max-width: 1110px;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: 500px;
+		grid-template-areas:
+							"sectionB sectionB sectionB sectionB sectionB sectionB sectionB sectionB sectionB sectionB sectionB sectionB";
+		column-gap: 30px;
+		margin: 0 auto;
+		position: relative;
+	}
+	&__container{
+		width: 100%;
+		height: min-content;
+		align-items: center;
+		justify-content: start;
+		grid-area: sectionB;
+		grid-column-start: 2;
+		grid-column-end: 12;
+		display: flex;
+		flex-flow: column nowrap;
+		text-align: center;
+		& h2{
+			font-size: 50px;
+			font-weight: 800;
+			line-height: 61px;
+			text-transform: uppercase;
+			margin-top: 90px;
+		}
+		& p{
+			font-size: 15px;
+			font-weight: 400;
+			line-height: 18px;
+			margin-top: 30px;
+		}
+		& button{
+			width: max-content;
+			height: 48px;
+			padding: 0 16px;
+			margin-top: 40px;
+			font-size: 18px;
+			font-weight: 700;
+			line-height: 22px;
+			text-transform: uppercase;
+			background-color: $colorComplementary;
+			color: $colorWhite;
+			border: unset;
+			border-radius: 6px;
+			&:hover{
+				background-color: $colorComplementaryHover;
+				cursor: pointer;
+			}
+		}
+	}
 }
+
+
+
+
+
+
 .sectionC{
 	grid-area: sectionC;
 	width: 100%;
-	max-width: 1110px;
 	height: 888px;
 	margin: 0 auto;
 }
 footer{
 	grid-area: footer;
 	width: 100%;
-	max-width: 1110px;
 	height: 103px;
 	margin: 0 auto;
 }
