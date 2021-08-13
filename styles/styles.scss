@@ -55,6 +55,7 @@ body{
 						"footer";
 	color: $colorWhite;
 }
+
 .header{
 	width: 100%;
 	height: 100px;
@@ -91,19 +92,23 @@ body{
 		div{
 			margin: 0 30px;
 			height: 65px;
+			padding: 0 16px;
 			padding-top: 35px;
 			a{
 				text-transform: uppercase;
 			}
 			&:first-child{
 				margin-left: 0px;
+				padding-left: 0;
 			}
 			&:last-child{
 				margin-right: 0px;
+				padding-right: 0;
 			}
 		}
 	}
 }
+
 .sectionA{
 	grid-area: sectionA;
 	width: 100%;
@@ -182,6 +187,7 @@ body{
 		}
 	}
 }
+
 .sectionB{
 	grid-area: sectionB;
 	width: 100%;
@@ -190,7 +196,13 @@ body{
 	background: no-repeat center url("../resources/blurred-bg.jpg");
 	background-size: cover;
 	position: relative;
-	&-gradient{
+	&-image{
+		position: absolute;
+		width: 100%;
+		bottom: calc(0% - 70px);
+		z-index: 1;
+	}
+	&-overlay{
 		width: 100%;
 		height: 100%;
 		background-color: #000000;
@@ -255,17 +267,51 @@ body{
 	}
 }
 
-
-
-
-
-
 .sectionC{
 	grid-area: sectionC;
 	width: 100%;
 	height: 888px;
 	margin: 0 auto;
+	background-color: $colorBlueDark;
+	&__layout{
+		width: 100%;
+		max-width: 1110px;
+		display: grid;
+		/* grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: auto;
+		grid-template-areas:
+							"cardA cardA cardA cardA cardA cardA cardA cardA cardA cardA cardA cardA"
+							"cardB cardB cardB cardB cardB cardB cardB cardB cardB cardB cardB cardB";
+		column-gap: 30px; */
+		grid-template-columns: 100%;
+		grid-template-rows: auto;
+		margin: 0 auto;
+		position: relative;
+		padding-top: 115px;
+	}
 }
+
+.card{
+	width: 685px;
+	height: 300px;
+	margin: 25px auto;
+	position: relative;
+	&__body{
+		width: 633px;
+		height: 300px;
+		background-color: $colorBackground;
+		border-radius: 10px;
+	}
+	&__image{
+		width: 280px;
+		height: 240px;
+		background-color: aquamarine;
+		position: absolute;
+		right: 0%;
+		top: calc(0% + 30px);
+	}
+}
+
 footer{
 	grid-area: footer;
 	width: 100%;
