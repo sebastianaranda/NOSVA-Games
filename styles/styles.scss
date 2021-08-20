@@ -212,7 +212,6 @@ body{
 		&-container{
 			width: 100%;
 			max-width: 360px;
-			//height: 300px;
 			margin-left: auto;
 			position: relative;
 			& .chest{
@@ -490,28 +489,31 @@ footer{
 		}
 	}
 	.sectionA{
-		&__layout{
-		}
-		&__container{
-		}
 		&__texto{
 			& h1{
+				font-size: 30px;
+				line-height: 36.57px;
 			}
 			& p{
-				& span{
-				}
+				font-size: 13px;
+				line-height: 15.85px;
 			}
 		}
 		&__imagen{
 			&-container{
-				& .chest{
-				}
 				& .coin{
 					&-front{
+						width: 60px;
+						left: 0;
 					}
 					&-back{
+						width: 20px;
+						top: 40px;
+						left: 40px;
 					}
 					&-middle{
+						width: 40px;
+						left: calc(100% - 80px);
 					}
 				}
 			}
@@ -533,37 +535,24 @@ footer{
 			display: block;
 		}
 	}
-	.sectionA{
-		&__layout{
-		}
-		&__container{
-		}
-		&__texto{
-			& h1{
-			}
-			& p{
-				& span{
-				}
-			}
-		}
-		&__imagen{
-			&-container{
-				& .chest{
-				}
-				& .coin{
-					&-front{
-					}
-					&-back{
-					}
-					&-middle{
-					}
-				}
-			}
-		}
-	}
 }
 
 @media screen and (max-width: 425px) {
+	.sectionA{
+		height: auto;
+		&__container{
+			height: auto;
+			flex-flow: column-reverse;
+		}
+		&__texto{
+			width: 100%;
+			margin-bottom: 30px;
+		}
+		&__imagen{
+			width: 90%;
+			margin-top: 60px;
+		}
+	}
 }
 
 @media screen and (max-width: 375px) {

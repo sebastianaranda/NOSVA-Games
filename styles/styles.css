@@ -398,7 +398,23 @@ footer {
     padding-top: 42px; }
     .header__menu-desktop div p {
       font-size: 13px;
-      line-height: 15.85px; } }
+      line-height: 15.85px; }
+  .sectionA__texto h1 {
+    font-size: 30px;
+    line-height: 36.57px; }
+  .sectionA__texto p {
+    font-size: 13px;
+    line-height: 15.85px; }
+  .sectionA__imagen-container .coin-front {
+    width: 60px;
+    left: 0; }
+  .sectionA__imagen-container .coin-back {
+    width: 20px;
+    top: 40px;
+    left: 40px; }
+  .sectionA__imagen-container .coin-middle {
+    width: 40px;
+    left: calc(100% - 80px); } }
 
 @media screen and (max-width: 600px) {
   .header__menu-desktop {
@@ -407,3 +423,16 @@ footer {
       font-size: 13px; }
   .header #header__menu-icoMobile {
     display: block; } }
+
+@media screen and (max-width: 425px) {
+  .sectionA {
+    height: auto; }
+    .sectionA__container {
+      height: auto;
+      flex-flow: column-reverse; }
+    .sectionA__texto {
+      width: 100%;
+      margin-bottom: 30px; }
+    .sectionA__imagen {
+      width: 90%;
+      margin-top: 60px; } }
