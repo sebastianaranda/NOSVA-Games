@@ -6,6 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOSVA Games | Home</title>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="./resources/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./resources/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./resources/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./resources/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="./resources/favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="./resources/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="./resources/favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./resources/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="./resources/favicon/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="./resources/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="./resources/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./resources/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="./resources/favicon/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="./resources/favicon/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="./resources/favicon/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="./resources/favicon/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="./resources/favicon/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="./resources/favicon/mstile-310x310.png" />
+    <meta name="description"
+        content="Un espacio confiable e inspirador con todo lo que necesitas para jugar y divertirte. Y aceptémoslo, porque realmente nos gusta ganar dinero.">
+    <meta name="keywords"
+        content="juego blockchain, comunidad, Axie Infinity, blockchain, crypto señales,juegos descentralizados, bitcoin, ethereum, becas">
     <script src="https://kit.fontawesome.com/10772b8d31.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +39,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
-    <script src="./js/app.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4"></script>
 </head>
 
 <body>
@@ -24,16 +48,40 @@
             <div class="header__layout">
                 <div class="header__container">
                     <img class="header__logo" src="./resources/logo.png" alt="">
-                    <nav>
-                        <div>
-                            <a>Inicio</a>
-                        </div>
-                        <div>
-                            <a>Solicitar beca</a>
-                        </div>
-                        <div>
-                            <a>Tutoriales</a>
-                        </div>
+                    <nav class="header__menu-desktop">
+                        <a href="#">
+                            <div>
+                                <p>Inicio</p>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div>
+                                <p>Solicitar beca</p>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div>
+                                <p>Tutoriales</p>
+                            </div>
+                        </a>
+                    </nav>
+                    <img id="header__menu-icoMobile" src="./resources/menu.svg" alt="">
+                    <nav class="header__menu-mobile">
+                        <a href="#">
+                            <div>
+                                <p>Inicio</p>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div>
+                                <p>Solicitar beca</p>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div>
+                                <p>Tutoriales</p>
+                            </div>
+                        </a>
                     </nav>
                 </div>
             </div>
@@ -83,7 +131,7 @@
 
         <section class="sectionC">
             <section class="sectionC__layout">
-                <article class="card">
+                <article class="card" id="cardA">
                     <div class="card__body right">
                         <h3>Clases de Criptomonedas</h3>
                         <p>Se participe de una de las industrias mas revolucionarias del Siglo XXI.<br>
@@ -96,7 +144,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card" id="cardB">
                     <div class="card__body left">
                         <h3>Se parte de una comunidad</h3>
                         <p>Se participe de una de las industrias mas revolucionarias del Siglo XXI.<br>
@@ -113,13 +161,21 @@
 
         <footer>
             <div class="footer__layout">
-                <p>Copyright © 2021 | NOSVA Games</p>
-                <img class="footer__layout-logo" src="./resources/logo.png" alt="">
-                <p id="author">Made with <i class="fas fa-heart"></i> & <i class="fas fa-coffee"></i></p>
+                <a href="https://github.com/sebastianaranda" target="_blank" class="footer__layout-author">
+                    <p>Made with <i class="fas fa-heart"></i> & <i class="fas fa-coffee"></i> - Sebastian Aranda</p>
+                </a>
+                <p class="footer__layout-copy">Copyright © 2021 | <span>NOSVA Games</span></p>
+                <div class="footer__layout-rrss">
+                    <a href="https://www.instagram.com/nosvagames/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/GamesNosva" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
         </footer>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./js/jquery.transit.min.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>

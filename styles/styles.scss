@@ -1,8 +1,4 @@
 /*---------- RESET DE CSS ----------*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -16,9 +12,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 html {
 	height: 100%;
+	min-width: 320px;
 }
 body {
 	line-height: 1;
+	min-width: 320px;
 }
 ol, ul {
 	list-style: none;
@@ -35,7 +33,6 @@ table {
 	border-spacing: 0;
 }
 /*---------- TERMINA RESET DE CSS ----------*/
-
 @import 'variables.scss';
 
 body{
@@ -60,6 +57,8 @@ body{
 	width: 100%;
 	height: 100px;
 	background-color: $colorSecundary;
+	position: fixed;
+	z-index: 2;
 	&__layout{
 		width: 100%;
 		max-width: 1110px;
@@ -70,6 +69,7 @@ body{
 							"header header header header header header header header header header header header";
 		column-gap: 30px;
 		margin: 0 auto;
+		position: relative;
 	}
 	&__container{
 		width: 100%;
@@ -86,26 +86,76 @@ body{
 		width: 160px;
 		height: 64px;
 	}
-	nav{
+	&__menu-desktop{
 		display: flex;
 		flex-flow: row nowrap;
+		a{
+			text-decoration: none;
+			color: $colorWhite;
+		}
 		div{
 			margin: 0 30px;
-			height: 65px;
+			height: 59px;
 			padding: 0 16px;
-			padding-top: 35px;
-			a{
+			padding-top: 41px;
+			transition: $transitionHover;
+			p{
 				text-transform: uppercase;
+				font-size: 15;
+				line-height: 18px;
+				font-weight: 700;
 			}
 			&:first-child{
 				margin-left: 0px;
-				padding-left: 0;
 			}
 			&:last-child{
 				margin-right: 0px;
-				padding-right: 0;
+			}
+			&:hover{
+				background-color: $colorSecundaryHover;
+				p{
+					color: $colorPrimary;
+				}
 			}
 		}
+	}
+	&__menu-mobile{
+		width: 100%;
+		background-color: $colorSecundary;
+		position: absolute;
+		top: 100%;
+		left: 0%;
+		right: 100%;
+		display: none;
+		a{
+			text-decoration: none;
+			color: $colorWhite;
+		}
+		div{
+			width: 100%;
+			height: 58px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: $transitionHover;
+			p{
+				text-transform: uppercase;
+				font-size: 15;
+				line-height: 18px;
+				font-weight: 700;
+			}
+			&:hover{
+				background-color: $colorSecundaryHover;
+				p{
+					color: $colorPrimary;
+				}
+			}
+		}
+	}
+	#header__menu-icoMobile{
+		width: 36px;
+		height: 36px;
+		display: none;
 	}
 }
 
@@ -113,6 +163,7 @@ body{
 	grid-area: sectionA;
 	width: 100%;
 	height: 400px;
+	margin-top: 100px;
 	background: rgb(2,0,36);
 	background: linear-gradient(90deg, $colorBlueDark 0%, $colorBlueLight 100%);
 	&__layout{
@@ -159,8 +210,9 @@ body{
 	&__imagen{
 		width: 50%;
 		&-container{
-			width: 360px;
-			height: 300px;
+			width: 100%;
+			max-width: 360px;
+			//height: 300px;
 			margin-left: auto;
 			position: relative;
 			& .chest{
@@ -170,7 +222,7 @@ body{
 				position: absolute;
 				&-front{
 					width: 120px;
-					top: -80px;
+					top: -60px;
 					left: -60px;
 				}
 				&-back{
@@ -259,6 +311,7 @@ body{
 			color: $colorWhite;
 			border: unset;
 			border-radius: 6px;
+			transition: $transitionHover;
 			&:hover{
 				background-color: $colorComplementaryHover;
 				cursor: pointer;
@@ -365,7 +418,7 @@ footer{
 		grid-template-columns: repeat(12, 1fr);
 		grid-template-rows: auto;
 		grid-template-areas:
-							"copy copy copy copy logo logo logo logo author author author author";
+							"author author author author copy copy copy copy rrss rrss rrss rrss";
 		column-gap: 30px;
 		margin: 0 auto;
 		p{
@@ -374,21 +427,16 @@ footer{
 			font-family: $fontMontserrat;
 			font-size: 12px;
 			line-height: 15px;
-			margin-top: 44px;
 		}
-		p:first-child{
-			grid-area: copy;
-			grid-column-start: 2;
-		}
-		&-logo{
-			grid-area: logo;
-			margin: 20px auto;
-		}
-		p:last-child{
+		&-author{
 			grid-area: author;
-			grid-column-end: 12;
-			text-align: right;
-			margin-left: auto;
+			text-align: left;
+			text-decoration: none;
+			color: $colorWhite;
+			transition: $transitionHover;
+			margin-top: 44px;
+			grid-column-start: 2;
+			font-weight: 400;
 			&:hover{
 				color: $colorPrimary;
 				i:first-child{
@@ -399,5 +447,124 @@ footer{
 				}
 			}
 		}
+		&-copy{
+			grid-area: copy;
+			text-align: center;
+			margin: 0 auto;
+			margin-top: 44px;
+			& span{
+				font-weight: 600;
+			}
+		}
+		&-rrss{
+			grid-area: copy;
+			grid-column-end: 12;
+			margin-top: 40px;
+			margin-left: auto;
+			& i{
+				font-size: 24px;
+				color: $colorWhite;
+				transition: $transitionHover;
+				&:last-child{
+					margin-left: 30px;
+				}
+				&:hover{
+					color: $colorPrimary;
+				}
+			}
+		}
 	}
+}
+
+@media screen and (max-width: 768px) {
+	.header{
+		&__menu-desktop{
+			div{
+				height: 58px;
+				padding-top: 42px;
+				p{
+					font-size: 13px;
+					line-height: 15.85px;
+				}
+			}
+		}
+	}
+	.sectionA{
+		&__layout{
+		}
+		&__container{
+		}
+		&__texto{
+			& h1{
+			}
+			& p{
+				& span{
+				}
+			}
+		}
+		&__imagen{
+			&-container{
+				& .chest{
+				}
+				& .coin{
+					&-front{
+					}
+					&-back{
+					}
+					&-middle{
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.header{
+		&__menu-desktop{
+			display: none;
+			div{
+				p{
+					font-size: 13px;
+				}
+			}
+		}
+		#header__menu-icoMobile{
+			display: block;
+		}
+	}
+	.sectionA{
+		&__layout{
+		}
+		&__container{
+		}
+		&__texto{
+			& h1{
+			}
+			& p{
+				& span{
+				}
+			}
+		}
+		&__imagen{
+			&-container{
+				& .chest{
+				}
+				& .coin{
+					&-front{
+					}
+					&-back{
+					}
+					&-middle{
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 425px) {
+}
+
+@media screen and (max-width: 375px) {
 }
