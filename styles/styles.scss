@@ -322,7 +322,7 @@ body{
 .sectionC{
 	grid-area: sectionC;
 	width: 100%;
-	height: 888px;
+	//height: 888px;
 	margin: 0 auto;
 	background-color: $colorBlueDark;
 	&__layout{
@@ -342,11 +342,14 @@ body{
 	height: 300px;
 	margin: 25px auto;
 	position: relative;
+	&:hover .card__body{
+		box-shadow: 0px 0px 8px 0px hsla(180,100,50,0.5);
+	}
 	&__body{
 		width: 633px;
 		height: 240px;
 		background-color: $colorBackground;
-		border-radius: 10px;
+		border-radius: 5px;
 		padding-top: 60px;
 		h3{
 			font-family: $fontMontserrat;
@@ -382,7 +385,6 @@ body{
 			width: 280px;
 			height: 240px;
 			position: absolute;
-			border-radius: 10px;
 			top: calc(0% + 30px);
 			right: 0%;
 		}
@@ -390,7 +392,6 @@ body{
 			width: 280px;
 			height: 240px;
 			position: absolute;
-			border-radius: 10px;
 			top: calc(0% + 30px);
 			left: 0%;
 		}
@@ -398,7 +399,7 @@ body{
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			border-radius: 10px;
+			border-radius: 5px;
 		}
 	}
 }
@@ -519,6 +520,72 @@ footer{
 			}
 		}
 	}
+	.sectionB{
+		&-image{
+			bottom: 0;
+		}
+		&-overlay{
+		}
+		&__layout{
+		}
+		&__container{
+			& h2{
+			}
+			& p{
+			}
+			& button{
+				&:hover{
+				}
+			}
+		}
+	}
+	.sectionC{
+		&__layout{
+			padding-top: 30px;
+		}
+	}
+	.card{
+		width: 100%;
+		max-width: 570px;
+		height: 276px;
+		&:hover .card__body{
+		}
+		&__body{
+			width: 527px;
+			height: 246px;
+			padding-top: 30px;
+			h3{
+				width: 268px;
+			}
+			p{
+				width: 268px;
+			}
+			&.right{
+				h3, p{
+					margin-left: 20px;
+				}
+			}
+			&.left{
+				h3, p{
+					margin-left: 244px;
+				}
+			}
+		}
+		&__image{
+			&.right{
+				width: 272px;
+				height: 236px;
+				top: calc(0% + 20px);
+			}
+			&.left{
+				width: 272px;
+				height: 236px;
+				top: calc(0% + 20px);
+			}
+			img{
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 600px) {
@@ -533,6 +600,71 @@ footer{
 		}
 		#header__menu-icoMobile{
 			display: block;
+		}
+	}
+	.sectionB{
+		height: 400px;
+		&-image{
+		}
+		&-overlay{
+		}
+		&__layout{
+		}
+		&__container{
+			& h2{
+				font-size: 46px;
+				line-height: 56.07px;
+				margin-top: 30px;
+			}
+			& p{
+			}
+			& button{
+				&:hover{
+				}
+			}
+		}
+	}
+
+	.sectionC{
+		&__layout{
+			width: 90%;
+			padding-top: 0;
+			margin-bottom: 30px;
+		}
+	}
+	.card{
+		max-width: unset;
+		height: unset;
+		margin: 0 auto;
+		margin-top: 30px;
+		&:hover .card__body{
+		}
+		&__body{
+			width: 100%;
+			padding-top: 150px;
+			height: unset;
+			padding-bottom: 20px;
+			h3, p{
+				margin: 0 auto;
+				padding-top: 20px;
+				width: calc(100% - 40px);
+			}
+			&.right, &.left{
+				h3, p{
+					margin: 0 auto;
+					width: calc(100% - 40px);
+				}
+			}
+		}
+		&__image{
+			&.right, &.left{
+				width: 100%;
+				height: 150px;
+				top: 0px;
+			}
+			img{
+				border-radius: 5px 5px 0px 0px;
+			}
 		}
 	}
 }
@@ -551,6 +683,25 @@ footer{
 		&__imagen{
 			width: 90%;
 			margin-top: 60px;
+		}
+	}
+	.sectionB{
+		height: 410px;
+		&-image{
+		}
+		&-overlay{
+		}
+		&__layout{
+		}
+		&__container{
+			& h2{
+			}
+			& p{
+			}
+			& button{
+				&:hover{
+				}
+			}
 		}
 	}
 }

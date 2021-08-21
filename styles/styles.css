@@ -268,7 +268,6 @@ body {
 .sectionC {
   grid-area: sectionC;
   width: 100%;
-  height: 888px;
   margin: 0 auto;
   background-color: #151b37; }
   .sectionC__layout {
@@ -286,11 +285,13 @@ body {
   height: 300px;
   margin: 25px auto;
   position: relative; }
+  .card:hover .card__body {
+    box-shadow: 0px 0px 8px 0px rgba(0, 255, 255, 0.5); }
   .card__body {
     width: 633px;
     height: 240px;
     background-color: #172e4f;
-    border-radius: 10px;
+    border-radius: 5px;
     padding-top: 60px; }
     .card__body h3 {
       font-family: "Montserrat", sans-serif;
@@ -318,21 +319,19 @@ body {
     width: 280px;
     height: 240px;
     position: absolute;
-    border-radius: 10px;
     top: calc(0% + 30px);
     right: 0%; }
   .card__image.left {
     width: 280px;
     height: 240px;
     position: absolute;
-    border-radius: 10px;
     top: calc(0% + 30px);
     left: 0%; }
   .card__image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px; }
+    border-radius: 5px; }
 
 footer {
   grid-area: footer;
@@ -414,7 +413,35 @@ footer {
     left: 40px; }
   .sectionA__imagen-container .coin-middle {
     width: 40px;
-    left: calc(100% - 80px); } }
+    left: calc(100% - 80px); }
+  .sectionB-image {
+    bottom: 0; }
+  .sectionC__layout {
+    padding-top: 30px; }
+  .card {
+    width: 100%;
+    max-width: 570px;
+    height: 276px; }
+    .card__body {
+      width: 527px;
+      height: 246px;
+      padding-top: 30px; }
+      .card__body h3 {
+        width: 268px; }
+      .card__body p {
+        width: 268px; }
+      .card__body.right h3, .card__body.right p {
+        margin-left: 20px; }
+      .card__body.left h3, .card__body.left p {
+        margin-left: 244px; }
+    .card__image.right {
+      width: 272px;
+      height: 236px;
+      top: calc(0% + 20px); }
+    .card__image.left {
+      width: 272px;
+      height: 236px;
+      top: calc(0% + 20px); } }
 
 @media screen and (max-width: 600px) {
   .header__menu-desktop {
@@ -422,7 +449,40 @@ footer {
     .header__menu-desktop div p {
       font-size: 13px; }
   .header #header__menu-icoMobile {
-    display: block; } }
+    display: block; }
+  .sectionB {
+    height: 400px; }
+    .sectionB__container h2 {
+      font-size: 46px;
+      line-height: 56.07px;
+      margin-top: 30px; }
+  .sectionC__layout {
+    width: 90%;
+    padding-top: 0;
+    margin-bottom: 30px; }
+  .card {
+    max-width: unset;
+    height: unset;
+    margin: 0 auto;
+    margin-top: 30px; }
+    .card__body {
+      width: 100%;
+      padding-top: 150px;
+      height: unset;
+      padding-bottom: 20px; }
+      .card__body h3, .card__body p {
+        margin: 0 auto;
+        padding-top: 20px;
+        width: calc(100% - 40px); }
+      .card__body.right h3, .card__body.right p, .card__body.left h3, .card__body.left p {
+        margin: 0 auto;
+        width: calc(100% - 40px); }
+    .card__image.right, .card__image.left {
+      width: 100%;
+      height: 150px;
+      top: 0px; }
+    .card__image img {
+      border-radius: 5px 5px 0px 0px; } }
 
 @media screen and (max-width: 425px) {
   .sectionA {
@@ -435,4 +495,6 @@ footer {
       margin-bottom: 30px; }
     .sectionA__imagen {
       width: 90%;
-      margin-top: 60px; } }
+      margin-top: 60px; }
+  .sectionB {
+    height: 410px; } }
