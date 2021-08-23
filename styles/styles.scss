@@ -95,7 +95,7 @@ body{
 		}
 		div{
 			margin: 0 30px;
-			height: 59px;
+			height: 100px;
 			padding: 0 16px;
 			padding-top: 41px;
 			transition: $transitionHover;
@@ -322,7 +322,6 @@ body{
 .sectionC{
 	grid-area: sectionC;
 	width: 100%;
-	//height: 888px;
 	margin: 0 auto;
 	background-color: $colorBlueDark;
 	&__layout{
@@ -342,12 +341,14 @@ body{
 	height: 300px;
 	margin: 25px auto;
 	position: relative;
+	background-color: transparent;
+	border: 0;
 	&:hover .card__body{
 		box-shadow: 0px 0px 8px 0px hsla(180,100,50,0.5);
 	}
 	&__body{
 		width: 633px;
-		height: 240px;
+		height: 100%;
 		background-color: $colorBackground;
 		border-radius: 5px;
 		padding-top: 60px;
@@ -418,7 +419,7 @@ footer{
 		grid-template-columns: repeat(12, 1fr);
 		grid-template-rows: auto;
 		grid-template-areas:
-							"author author author author copy copy copy copy rrss rrss rrss rrss";
+							"copy copy copy copy copy rrss rrss author author author author author";
 		column-gap: 30px;
 		margin: 0 auto;
 		p{
@@ -428,50 +429,70 @@ footer{
 			font-size: 12px;
 			line-height: 15px;
 		}
-		&-author{
-			grid-area: author;
-			text-align: left;
-			text-decoration: none;
-			color: $colorWhite;
-			transition: $transitionHover;
-			margin-top: 44px;
-			grid-column-start: 2;
-			font-weight: 400;
-			&:hover{
-				color: $colorPrimary;
-				i:first-child{
-					color: red;
-				}
-				i:last-child{
-					color: burlywood;
-				}
-			}
-		}
 		&-copy{
 			grid-area: copy;
-			text-align: center;
-			margin: 0 auto;
+			text-align: right;
 			margin-top: 44px;
+			grid-column-start: 2;
 			& span{
 				font-weight: 600;
 			}
 		}
 		&-rrss{
-			grid-area: copy;
-			grid-column-end: 12;
+			grid-area: rrss;
+			margin: 0 auto;
 			margin-top: 40px;
-			margin-left: auto;
 			& i{
 				font-size: 24px;
 				color: $colorWhite;
 				transition: $transitionHover;
-				&:last-child{
-					margin-left: 30px;
-				}
 				&:hover{
 					color: $colorPrimary;
 				}
 			}
+			a:last-child{
+				margin-left: 15px;
+			}
+		}
+		&-author{
+			grid-area: author;
+			text-align: right;
+			text-decoration: none;
+			color: $colorWhite;
+			transition: $transitionHover;
+			margin-top: 44px;
+			font-weight: 400;
+			margin-left: auto;
+			grid-column-end: 12;
+			&:hover{
+				color: $colorPrimary;
+				i:first-child{
+					color: red;
+				}
+			}
+		}
+	}
+}
+
+.accordion{
+	width: 70%;
+	margin: 0 auto;
+	&-item{
+		background-color: $colorBlueDark;
+		border-color: $colorPrimary;
+	}
+	&-button{
+		background-color: $colorBlueDark;
+		color: $colorWhite;
+		font-family: $fontMontserrat;
+		font-weight: 500;
+		&:hover{
+			background-color: $colorBlueDarkHover;
+		}
+		&:not(.collapsed){
+			background-color: $colorBlueDark;
+			box-shadow: inset 0 -1px hsla(180,100,50,.125);
+			color: $colorWhite;
 		}
 	}
 }
@@ -480,7 +501,7 @@ footer{
 	.header{
 		&__menu-desktop{
 			div{
-				height: 58px;
+				height: 100px;
 				padding-top: 42px;
 				p{
 					font-size: 13px;
@@ -552,7 +573,6 @@ footer{
 		}
 		&__body{
 			width: 527px;
-			height: 246px;
 			padding-top: 30px;
 			h3{
 				width: 268px;
@@ -667,6 +687,47 @@ footer{
 			}
 		}
 	}
+	footer{
+		.footer__layout{
+			grid-template-rows: 50px auto;
+			grid-template-areas:
+								"copy copy copy copy copy copy rrss rrss rrss rrss rrss rrss"
+								"author author author author author author author author author author author author";
+		
+			p{
+			}
+			&-copy{
+				margin-top: 18px;
+				& span{
+				}
+			}
+			&-rrss{
+				grid-area: rrss;
+				grid-column-end: 12;
+				margin: unset;
+				margin-top: 15px;
+				margin-left: auto;
+				& i{
+					&:hover{
+					}
+				}
+				a:last-child{
+				}
+			}
+			&-author{
+				grid-area: author;
+				text-align: center;
+				margin: 0 auto;
+				margin-top: 15px;
+				&:hover{
+					i:first-child{
+					}
+					i:last-child{
+					}
+				}
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 425px) {
@@ -707,4 +768,41 @@ footer{
 }
 
 @media screen and (max-width: 375px) {
+	footer{
+		.footer__layout{
+			display: flex;
+			flex-flow: column nowrap;
+			height: 78px;
+			padding-top: 10px;
+			padding-bottom: 15px;
+			justify-content: space-between;
+			align-items: center;
+			p{
+			}
+			&-copy{
+				margin: 0;
+				text-align: center;
+				& span{
+				}
+			}
+			&-rrss{
+				margin: 0;
+				& i{
+					&:hover{
+					}
+				}
+				a:last-child{
+				}
+			}
+			&-author{
+				margin: 0;
+				&:hover{
+					i:first-child{
+					}
+					i:last-child{
+					}
+				}
+			}
+		}
+	}
 }
