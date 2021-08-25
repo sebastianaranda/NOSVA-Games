@@ -10,13 +10,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-html {
-	height: 100%;
-	min-width: 320px;
-}
 body {
 	line-height: 1;
-	min-width: 320px;
 }
 ol, ul {
 	list-style: none;
@@ -336,14 +331,25 @@ body{
 	}
 }
 
-.card{
+.faq{
+	width: 100%;
+	text-align: center;
+	font-size: 50px;
+	font-weight: 800;
+	line-height: 61px;
+	text-transform: uppercase;
+	margin: 30px auto;
+	color: $colorPrimary;
+}
+
+.tarjeta{
 	width: 685px;
 	height: 300px;
 	margin: 25px auto;
 	position: relative;
 	background-color: transparent;
 	border: 0;
-	&:hover .card__body{
+	&:hover .tarjeta__body{
 		box-shadow: 0px 0px 8px 0px hsla(180,100,50,0.5);
 	}
 	&__body{
@@ -442,6 +448,7 @@ footer{
 			grid-area: rrss;
 			margin: 0 auto;
 			margin-top: 40px;
+			min-width: 107px;
 			& i{
 				font-size: 24px;
 				color: $colorWhite;
@@ -450,8 +457,11 @@ footer{
 					color: $colorPrimary;
 				}
 			}
-			a:last-child{
+			a{
 				margin-left: 15px;
+				&:first-child{
+					margin-left: 0;
+				}
 			}
 		}
 		&-author{
@@ -475,24 +485,39 @@ footer{
 }
 
 .accordion{
-	width: 70%;
+	width: 80%;
 	margin: 0 auto;
+	margin-bottom: 30px;
 	&-item{
-		background-color: $colorBlueDark;
+		background-color: $colorBackground;
 		border-color: $colorPrimary;
 	}
 	&-button{
 		background-color: $colorBlueDark;
 		color: $colorWhite;
 		font-family: $fontMontserrat;
-		font-weight: 500;
+		font-weight: 600;
+		&::after{
+			background-image: url("../resources/arrow_down.svg");
+		}
 		&:hover{
 			background-color: $colorBlueDarkHover;
 		}
 		&:not(.collapsed){
-			background-color: $colorBlueDark;
+			background-color: $colorBlueDarkHover;
 			box-shadow: inset 0 -1px hsla(180,100,50,.125);
 			color: $colorWhite;
+			&::after{
+				background-image: url("../resources/arrow_up.svg");
+			}
+		}
+	}
+	a{
+		text-decoration: none;
+		color: $colorPrimary;
+		font-weight: 500;
+		&:hover{
+			text-decoration: underline;
 		}
 	}
 }
@@ -545,32 +570,16 @@ footer{
 		&-image{
 			bottom: 0;
 		}
-		&-overlay{
-		}
-		&__layout{
-		}
-		&__container{
-			& h2{
-			}
-			& p{
-			}
-			& button{
-				&:hover{
-				}
-			}
-		}
 	}
 	.sectionC{
 		&__layout{
 			padding-top: 30px;
 		}
 	}
-	.card{
+	.tarjeta{
 		width: 100%;
 		max-width: 570px;
 		height: 276px;
-		&:hover .card__body{
-		}
 		&__body{
 			width: 527px;
 			padding-top: 30px;
@@ -602,9 +611,27 @@ footer{
 				height: 236px;
 				top: calc(0% + 20px);
 			}
-			img{
+		}
+	}
+	footer{
+		.footer__layout{
+			&-rrss{
+				width: 100%;
+				min-width: 80px;
+				height: 103px;
+				margin: 0 auto;
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: space-between;
+				align-items: center;
+				a{
+					margin-left: unset;
+				}
 			}
 		}
+	}
+	.accordion{
+		width: 80%;
 	}
 }
 
@@ -624,27 +651,14 @@ footer{
 	}
 	.sectionB{
 		height: 400px;
-		&-image{
-		}
-		&-overlay{
-		}
-		&__layout{
-		}
 		&__container{
 			& h2{
 				font-size: 46px;
 				line-height: 56.07px;
 				margin-top: 30px;
 			}
-			& p{
-			}
-			& button{
-				&:hover{
-				}
-			}
 		}
 	}
-
 	.sectionC{
 		&__layout{
 			width: 90%;
@@ -652,13 +666,11 @@ footer{
 			margin-bottom: 30px;
 		}
 	}
-	.card{
+	.tarjeta{
 		max-width: unset;
 		height: unset;
 		margin: 0 auto;
 		margin-top: 30px;
-		&:hover .card__body{
-		}
 		&__body{
 			width: 100%;
 			padding-top: 150px;
@@ -693,13 +705,8 @@ footer{
 			grid-template-areas:
 								"copy copy copy copy copy copy rrss rrss rrss rrss rrss rrss"
 								"author author author author author author author author author author author author";
-		
-			p{
-			}
 			&-copy{
 				margin-top: 18px;
-				& span{
-				}
 			}
 			&-rrss{
 				grid-area: rrss;
@@ -707,11 +714,14 @@ footer{
 				margin: unset;
 				margin-top: 15px;
 				margin-left: auto;
-				& i{
-					&:hover{
+				height: 50px;
+				display: block;
+				width: unset;
+				a{
+					margin-left: 15px;
+					&:first-child{
+						margin-left: 0;
 					}
-				}
-				a:last-child{
 				}
 			}
 			&-author{
@@ -719,14 +729,11 @@ footer{
 				text-align: center;
 				margin: 0 auto;
 				margin-top: 15px;
-				&:hover{
-					i:first-child{
-					}
-					i:last-child{
-					}
-				}
 			}
 		}
+	}
+	.accordion{
+		width: 90%;
 	}
 }
 
@@ -748,61 +755,40 @@ footer{
 	}
 	.sectionB{
 		height: 410px;
-		&-image{
-		}
-		&-overlay{
-		}
-		&__layout{
-		}
-		&__container{
-			& h2{
-			}
-			& p{
-			}
-			& button{
-				&:hover{
-				}
-			}
-		}
+	}
+	.accordion{
+		width: 100%;
 	}
 }
 
 @media screen and (max-width: 375px) {
+	.faq{
+		font-size: 46px;
+		line-height: 56.07px;
+	}
 	footer{
 		.footer__layout{
 			display: flex;
 			flex-flow: column nowrap;
-			height: 78px;
+			height: 100%;
 			padding-top: 10px;
 			padding-bottom: 15px;
 			justify-content: space-between;
 			align-items: center;
-			p{
-			}
 			&-copy{
 				margin: 0;
 				text-align: center;
-				& span{
-				}
 			}
 			&-rrss{
 				margin: 0;
-				& i{
-					&:hover{
-					}
-				}
-				a:last-child{
-				}
+				height: 24px;
 			}
 			&-author{
 				margin: 0;
-				&:hover{
-					i:first-child{
-					}
-					i:last-child{
-					}
-				}
 			}
 		}
+	}
+	.accordion{
+		width: 100%;
 	}
 }

@@ -40,8 +40,8 @@
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/styles.css">
     <script src="https://unpkg.com/scrollreveal@4"></script>
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body>
@@ -51,17 +51,17 @@
                 <div class="header__container">
                     <img class="header__logo" src="./resources/logo.png" alt="">
                     <nav class="header__menu-desktop">
-                        <a href="#">
+                        <a href="#" id="btnHome">
                             <div>
                                 <p>Inicio</p>
                             </div>
                         </a>
-                        <a href="#becas">
+                        <a href="#" id="btnBecas">
                             <div>
                                 <p>Becas</p>
                             </div>
                         </a>
-                        <a href="">
+                        <a href="" id="btnFaq">
                             <div>
                                 <p>FAQ</p>
                             </div>
@@ -74,17 +74,17 @@
                     </nav>
                     <img id="header__menu-icoMobile" src="./resources/menu.svg" alt="">
                     <nav class="header__menu-mobile">
-                        <a href="#">
+                        <a href="#" id="btnHomeMobile">
                             <div>
                                 <p>Inicio</p>
                             </div>
                         </a>
-                        <a href="">
+                        <a href="" id="btnBecasMobile">
                             <div>
                                 <p>Becas</p>
                             </div>
                         </a>
-                        <a href="">
+                        <a href="" id="btnFaqMobile">
                             <div>
                                 <p>FAQ</p>
                             </div>
@@ -143,46 +143,53 @@
 
         <section class="sectionC">
             <section class="sectionC__layout">
-                <article class="card" id="cardA">
-                    <div class="card__body right">
+                <article class="tarjeta" id="cardA">
+                    <div class="tarjeta__body right">
                         <h3>Clases de Criptomonedas</h3>
                         <p>Se participe de una de las industrias mas revolucionarias del Siglo XXI.<br>
                             <br>
                             Aprende todo sobre criptomonedas con nuestros cursos gratuitos
                         </p>
                     </div>
-                    <div class="card__image right">
+                    <div class="tarjeta__image right">
                         <img src="./resources/imageA.jpg" alt="">
                     </div>
                 </article>
 
-                <article class="card" id="cardB">
-                    <div class="card__body left">
+                <article class="tarjeta" id="cardB">
+                    <div class="tarjeta__body left">
                         <h3>Se parte de una comunidad</h3>
                         <p>Se participe de una de las industrias mas revolucionarias del Siglo XXI.<br>
                             <br>
                             Aprende todo sobre criptomonedas con nuestros cursos gratuitos
                         </p>
                     </div>
-                    <div class="card__image left">
+                    <div class="tarjeta__image left">
                         <img src="./resources/imageB.jpg" alt="">
                     </div>
                 </article>
 
-                <div class="accordion accordion-flush" id="accordionFlushExample">
+                <h3 class="faq">FAQ</h3>
+
+                <div class="accordion accordion-flush" id="accordionFlushFaq">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingOne">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapseOne" aria-expanded="false"
                                 aria-controls="flush-collapseOne">
-                                Accordion Item #1
+                                ¿Quiénes somos?
                             </button>
                         </h2>
                         <div id="flush-collapseOne" class="accordion-collapse collapse"
-                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion
-                                body.</div>
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushFaq">
+                            <div class="accordion-body">Creamos <span style="font-weight: bold;">NOSVA Games</span> con
+                                la finalidad de tener un espacio
+                                confiable e inspirador con todo lo que necesitas para jugar y divertirte <span
+                                    style="font-style: italic;">(y,
+                                    aceptémoslo, porque realmente nos gusta ganar dinero).</span><br>
+                                <br>
+                                Esperamos que disfrutes navegando en nuestros juegos, cursos y nuevos hallazgos.
+                            </div>
                         </div>
                     </div>
                     <div class="accordion-item">
@@ -190,33 +197,162 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapseTwo" aria-expanded="false"
                                 aria-controls="flush-collapseTwo">
-                                Accordion Item #2
+                                ¿Cómo elegimos a los becados?
                             </button>
                         </h2>
                         <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion
-                                body. Let's imagine this being filled with some actual content.</div>
+                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushFaq">
+                            <div class="accordion-body">Nuestro principal objetivo es ayudar y desarrollar a nuestra
+                                comunidad brindándoles información para su crecimiento económico.<br>
+                                <br>
+                                De esta forma, validamos cada una de tus respuestas para escoger a nuestros becados.
+                            </div>
                         </div>
                     </div>
-                    <!-- <div class="accordion-item">
+                    <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapseThree" aria-expanded="false"
                                 aria-controls="flush-collapseThree">
-                                Accordion Item #3
+                                ¿Cómo participo?
                             </button>
                         </h2>
                         <div id="flush-collapseThree" class="accordion-collapse collapse"
-                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion
-                                body. Nothing more exciting happening here in terms of content, but just filling up the
-                                space to make it look, at least at first glance, a bit more representative of how this
-                                would look in a real-world application.</div>
+                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushFaq">
+                            <div class="accordion-body">Completa el siguiente <a
+                                    href="https://docs.google.com/forms/d/e/1FAIpQLSeuaXY9EsoOVTmq580Ol5rO9jIEKeM5r7WbFComjvAmCrcC6A/viewform"
+                                    target="_blank">formulario</a> respondiendo cada una de las
+                                preguntas del mismo.</div>
                         </div>
-                    </div> -->
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                aria-controls="flush-collapseFour">
+                                ¿Si soy menor de edad, puedo jugar?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushFaq">
+                            <div class="accordion-body">No, únicamente aceptamos a mayores de 18 años.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                aria-controls="flush-collapseFive">
+                                ¿Cómo saber si obtuve una BECA?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFive" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushFaq">
+                            <div class="accordion-body">Una vez que quedes seleccionado recibirás un correo electrónico
+                                de bienvenida con toda la información necesaria para comenzar esta aventura!<br>
+                                <br>
+                                Debido a la alta demanda que presentamos queremos notificarles que el plazo de selección
+                                se puede extender hasta 30 días.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                aria-controls="flush-collapseSix">
+                                ¿Qué gano al jugar?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseSix" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushFaq">
+                            <div class="accordion-body">Todos los juegos sobre los que asignamos BECAS son construidos
+                                sobre redes de Blockchain, es por ese motivo que la recompensa será en criptomonedas.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseSeven" aria-expanded="false"
+                                aria-controls="flush-collapseSeven">
+                                ¿Cómo sé cuáles son mis recompensas?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushFaq">
+                            <div class="accordion-body">Cada una de tus recompensas podrás visualizarlas en los
+                                inventarios de cada juego. Tus recompensas serán equivalentes a un porcentaje de lo que
+                                ganes jugando.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingEight">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseEight" aria-expanded="false"
+                                aria-controls="flush-collapseEight">
+                                ¿Cómo sé cuánto voy ganando?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseEight" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushFaq">
+                            <div class="accordion-body">Cada una de las criptomonedas generadas poseen una cotización en
+                                dolares.<br>
+                                <br>
+                                Ejemplo: Si generas 1000 monedas deberás multiplicar el total de las mismas por
+                                0,25.<br>
+                                <br>
+                                Podrás buscar el valor de la misma ingresando a <a href="https://www.coingecko.com/"
+                                    target="_blank">CoinmarketCap</a>.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingNine">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseNine" aria-expanded="false"
+                                aria-controls="flush-collapseNine">
+                                ¿Cuántas cuentas puedo tener?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseNine" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushFaq">
+                            <div class="accordion-body">Solo podrás utilizar una cuenta. Caso contrario serás baneado.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTen">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTen" aria-expanded="false"
+                                aria-controls="flush-collapseTen">
+                                ¿Cuántas horas puedo jugar?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTen" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushFaq">
+                            <div class="accordion-body">Es importante que como mínimo juegues 2 horas por día.<br>
+                                <br>
+                                Importante: Cuantas más horas juegues mayores serán tus recompensas.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingEleven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseEleven" aria-expanded="false"
+                                aria-controls="flush-collapseEleven">
+                                ¿Cómo aprendo a jugar? ¿Cómo mejoro mis recompensas en el juego?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseEleven" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingEleven" data-bs-parent="#accordionFlushFaq">
+                            <div class="accordion-body">Te invitamos a visualizar todos los videos de nuestra página web
+                                para convertirte en un experto en el área.
+                                Semanalmente realizaremos streams para desarrollar tus habilidades y en consecuente, tus
+                                recompensas.</div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </section>
@@ -225,11 +361,12 @@
             <div class="footer__layout">
                 <div class="footer__layout-rrss">
                     <a href="https://www.instagram.com/nosvagames/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://t.me/joinchat/I2QMsh72bhQ1MTcx" target="_blank"><i class="fab fa-telegram"></i></a>
                     <a href="https://twitter.com/GamesNosva" target="_blank"><i class="fab fa-twitter"></i></a>
                 </div>
                 <p class="footer__layout-copy">Copyright © 2021 | <span>NOSVA Games</span></p>
                 <a href="https://github.com/sebastianaranda" target="_blank" class="footer__layout-author">
-                    <p>Made with <i class="fas fa-heart"></i> & <i class="fas fa-coffee"></i> - Sebastian Aranda</p>
+                    <p>Made with <i class="fas fa-heart"></i> - Sebastian Aranda</p>
                 </a>
             </div>
         </footer>
